@@ -72,6 +72,7 @@ Cliente cliente = new ();
 cliente.Nome = "Jimmy";
 ;
 ContaCorrente conta6 = new(conta6.Titular.Nome, "Agencia de Registro",365, "1258436-X");
+//teste
 conta6.Titular = cliente;
 Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
 Console.WriteLine(conta6.Titular.Nome);
