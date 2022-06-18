@@ -147,6 +147,9 @@ namespace bytebank
         }
 
         public static int TotalDeContasCriadas { get; set; }
-
+        public string Nome { get; }
+        public string V1 { get; }
+        public int V2 { get; }
+        public string V3 { get; }
     }
 }
