@@ -1,25 +1,22 @@
-﻿namespace bytebank.Titular
+﻿namespace ByteBank
 {
     public class Cliente
     {
-        private string _nome;
-        public string Nome
+        private string _cpf;
+
+        public string Nome { get; set; }
+        public string CPF
         {
-            get { return _nome; }
+            get
+            {
+                return _cpf;
+            }
             set
             {
-                if (value == null)
-                {
-
-                }
-                else
-                {
-                    _nome = value;
-                }
+                // Escrevo minha lógica de validação de CPF
+                _cpf = value;
             }
         }
-        public string Cpf { get; set; }
         public string Profissao { get; set; }
-
     }
 }
