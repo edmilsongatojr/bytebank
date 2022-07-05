@@ -1,4 +1,6 @@
-﻿namespace ByteBank
+﻿using bytebank;
+
+namespace ByteBank
 {
     class Program
     {
@@ -15,7 +17,7 @@
                 Console.WriteLine("Consulta Saldo: " + conta.Saldo);
                 Console.WriteLine("-----------------------------------------------------");
 
-                conta.Sacar(50);
+                conta.Sacar(500);
                 Console.WriteLine("Consulta Saldo: " + conta.Saldo);
                 Console.WriteLine("-----------------------------------------------------");
 
@@ -25,6 +27,11 @@
 
                 Console.WriteLine("Ocorreu um erro do tipo ArgumentException!\n");
                 Console.WriteLine("Erro no parâmetro: " + ex.ParamName);
+            }
+            catch (SaldoInsuficienteException ex)
+            {
+              
+                Console.WriteLine("Exceção do tipo SaldoInsuficienteException: " + ex.Message);
             }
             
             //Console.WriteLine(ContaCorrente.TaxaOperacao);
