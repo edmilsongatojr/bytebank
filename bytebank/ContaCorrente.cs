@@ -6,6 +6,7 @@ namespace ByteBank
     {
         public Cliente Titular { get; set; }
 
+        public static double TaxaOperacao { get; private set; }
         public static int TotalDeContasCriadas { get; private set; }
 
 
@@ -16,7 +17,7 @@ namespace ByteBank
             {
                 return _agencia;
             }
-            set
+            private set
             {
                 if (value <= 0)
                 {
@@ -26,7 +27,7 @@ namespace ByteBank
                 _agencia = value;
             }
         }
-        public int Numero { get; set; }
+        public int Numero { get;}
 
         private double _saldo = 100;
 
@@ -36,7 +37,7 @@ namespace ByteBank
             {
                 return _saldo;
             }
-            set
+            private set
             {
                 if (value < 0)
                 {
@@ -53,6 +54,15 @@ namespace ByteBank
             Agencia = agencia;
             Numero = numero;
 
+            //TaxaOperacao = 30 / TotalDeContasCriadas;
+            if (agencia <= 0)
+            {
+                throw new ArgumentException("O Argumento agencia deve ser maior que Zero!", nameof(agencia));
+            }
+            if (numero <= 0)
+            {
+                throw new ArgumentException("O Argumento numero deve ser maior que Zero!", nameof(numero));
+            }
             TotalDeContasCriadas++;
         }
 
