@@ -8,8 +8,12 @@ namespace ByteBank
     {
         public Cliente Titular { get; set; }
 
-        public static double TaxaOperacao { get; private set; }
+        //public static double TaxaOperacao { get; private set; }
         public static int TotalDeContasCriadas { get; private set; }
+
+        public int ContadorTSaquesNaoPermitidos { get; set; }
+
+        public int ContadorTransferenciasNaoPermitidas { get; set; }
 
 
         private int _agencia;
